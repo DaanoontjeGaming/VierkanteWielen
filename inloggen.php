@@ -1,8 +1,8 @@
-<!-- <?php
+<?php
 session_start();
 
 
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="repsonsive.css">
 </head>
 <body id="inlogpage">
-    <img class="logo-inlog" src="">
+    <img class="logo-inlog" src="Images/logo.jpg">
     <div class="inlog-container">
     <h1 id="inlog-txt">Log in op je account</h1>
     <form action="confirm.php" method="post">
@@ -30,10 +30,5 @@ session_start();
         <button class="btn2 btn"><a id="registreren" href="registreren.php">Registreren</a></button>
     </form>
     </div>
-
-
-<!-- <?php
-echo $_SESSION['false-user-pass'];
-?> -->
 </body>
 </html>

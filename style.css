@@ -22,6 +22,9 @@ blauwgrijs: #BCD8ED / rgb(188, 216, 237) --10%--
     background-color: rgb(188, 216, 237);
 }
 
+.red{
+    color: red;
+}
 
 #inlog-txt{
     font-size: 24px;
