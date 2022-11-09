@@ -92,6 +92,18 @@ CREATE TABLE IF NOT EXISTS `Lessen` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `Lespaketten`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Lespaketten` (
+  `PakketID` INT NOT NULL AUTO_INCREMENT,
+  `Pakketnaam` VARCHAR(255) NULL,
+  `Pakketprijs` DECIMAL(4,2) NULL,
+  `Pakketinfo` VARCHAR(500) NULL,
+  PRIMARY KEY (`PakketID`))
+ENGINE = InnoDB;
+
+INSERT INTO Accounts (`Username`, `Password`, `E-mail`) VALUES ('test', '123', 'test@example.com');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
