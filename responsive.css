@@ -1,0 +1,326 @@
+/* 
+Werk eerst in deze css file voor je gaat sylen op desktop niveau.
+NOTE: deze file gebruik je uitsluitend voor plaatsing en grootte van elementen, opmaak en dergelijke doen we in style.css
+*/
+
+@media all {
+    *{
+        font-size: 20px;
+    }
+
+    #inlog-txt{
+        font-size: 24px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 16px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 14vw;
+        height: 28vh;
+        left: 43vw;
+        top: 10vh;
+    }
+
+    .inlog-container{
+        width: 40vw;
+        height: 40vh;
+        left: 30vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 10vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4vh;
+        left: 2vw;
+    }
+    
+    .btn2{
+        top: 5vh;
+        left: 2vw;
+    }
+
+}
+
+
+
+/* --Mobiles-- */
+
+@media only screen 
+and (min-device-width: 320px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    *{
+        font-size: 16px;
+    }
+
+    #inlog-txt{
+        font-size: 18px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 13px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 25vw;
+        height: 15vh;
+        left: 40vw;
+        top: 20vh;
+    }
+
+    .inlog-container{
+        width: 56vw;
+        height: 40vh;
+        left: 22vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 21vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4.5vh;
+        left: 24vw;
+    }
+    
+    .btn2{
+        right: 2vw;
+    }
+
+}
+
+
+/* --Tabblad/Ipad-- */  
+
+@media only screen 
+and (min-device-width: 481px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    *{
+        font-size: 20px;
+    }
+
+    #inlog-txt{
+        font-size: 18px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 14px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 17vw;
+        height: 17vh;
+        left: 43vw;
+        top: 18vh;
+    }
+
+    .inlog-container{
+        width: 60vw;
+        height: 40vh;
+        left: 20vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 18vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4.5vh;
+        left: 19vw;
+    }
+    
+    .btn2{
+        right: 4vw;
+    }
+
+}
+
+
+/* --Small screens/laptops */
+
+@media only screen  
+and (min-device-width: 769px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    *{
+        font-size:16px;
+    }
+
+    #inlog-txt{
+        font-size: 24px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 12px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 21vw;
+        height: 21vh;
+        left: 40vw;
+        top: 20vh;
+    }
+
+    .inlog-container{
+        width: 40vw;
+        height: 40vh;
+        left: 30vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 12.5vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4vh;
+        left: 8vw;
+    }
+    
+    .btn2{
+        top: 6vh;
+        left: 8vw;
+    }
+
+}
+
+
+/* --Dekstop/Large screens-- */  
+
+@media only screen 
+and (min-device-width: 1025px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    *{
+        font-size: 16px;
+    }
+
+    #inlog-txt{
+        font-size: 22px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 14px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 24vw;
+        height: 28vh;
+        left: 40vw;
+        top: 10vh;
+    }
+
+    .inlog-container{
+        width: 40vw;
+        height: 40vh;
+        left: 30vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 10vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4vh;
+        left: 4vw;
+    }
+    
+    .btn2{
+        left: 4vw;
+    
+}
+
+}
+
+/* XL screens/TV */ 
+
+
+@media only screen 
+and (min-device-width: 1201px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    *{
+        font-size: 20px;
+    }
+
+    #inlog-txt{
+        font-size: 24px;
+        margin-top: 2vh;
+    }
+    
+    .inloglabel{
+        font-size: 16px;
+    }
+    
+    .inlogbox{
+        font-size: 3px;
+    }
+    
+    .logo-inlog{
+        width: 14vw;
+        height: 28vh;
+        left: 43vw;
+        top: 10vh;
+    }
+
+    .inlog-container{
+        width: 40vw;
+        height: 40vh;
+        left: 30vw;
+        top: 50vh;
+    }
+    
+    .btn{
+        width: 10vw;
+        height: 4.5vh;
+    }
+
+    .btn1{
+        top: 4vh;
+        left: 2vw;
+    }
+    
+    .btn2{
+        left: 2vw;
+    }
+
+}

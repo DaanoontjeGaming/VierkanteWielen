@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inloggen</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="repsonsive.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
 </head>
 <body id="inlogpage">
     <img class="logo-inlog" src="Images/logo.jpg">
