@@ -5,3 +5,66 @@
     font-size: 20px;
     font-family: sans-serif;
 }
+
+.Navi {
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.Navi a {
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 1%;
+    padding-right: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+.imgclass {
+    width: 100%;
+    height: auto;
+    border: 0;
+    margin-bottom: -10px;
+}
+
+.imgcon {
+    position: relative;
+    text-align: center;
+}
+
+.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signup a {
+    color: white;
+    text-decoration: none;
+}
+
+.info {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: space-around;
+    background-color: lightgray;
+    align-items: center;
+}
+
+.info h1 {
+    font-size: 1.3vw;
+}
+
+.info p {
+    font-size: 0.8vw;
+}
+
+.imgclass2 {
+    width: 35%;
+    height: 35%;
+}
