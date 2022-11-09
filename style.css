@@ -6,6 +6,10 @@
     font-family: sans-serif;
 }
 
+h1 {
+    font-size: 1.3vw;
+}
+
 .Navi {
     background-color: aliceblue;
     display: flex;
@@ -55,10 +59,6 @@
     align-items: center;
 }
 
-.info h1 {
-    font-size: 1.3vw;
-}
-
 .info p {
     font-size: 0.8vw;
 }
@@ -82,4 +82,12 @@
     justify-content: space-around;
     grid-template-columns: 60% 20%;
     padding-top: 5%;
+}
+
+.reviews p {
+    font-size: 1vw;
+}
+
+.reviews2 p {
+    font-size: 1vw;
 }
