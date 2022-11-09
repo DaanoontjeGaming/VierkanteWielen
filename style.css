@@ -26,7 +26,6 @@
 .imgclass {
     width: 100%;
     height: auto;
-    border: 0;
     margin-bottom: -10px;
 }
 
@@ -67,4 +66,20 @@
 .imgclass2 {
     width: 35%;
     height: 35%;
+}
+
+.reviews {
+    background-color: aliceblue;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 20% 60%;
+    padding-top: 5%;
+}
+
+.reviews2 {
+    background-color: aliceblue;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 60% 20%;
+    padding-top: 5%;
 }
