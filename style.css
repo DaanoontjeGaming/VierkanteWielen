@@ -1,8 +1,17 @@
+/* 
+Kleuren:
+Blauw: #01579b / rgb(1, 87, 155) --60%--
+Donkergrijs: #26328 / rgb(38, 50, 56) --30%--
+blauwgrijs: #BCD8ED / rgb(188, 216, 237) --10%--
+*/
+
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
     font-family: sans-serif;
 }
 
@@ -92,4 +101,80 @@ h1 {
 
 .reviews2 p {
     font-size: 1vw;
+}
+
+
+/* -Inlog pagina style- */
+#inlogpage{
+    background-color: rgb(188, 216, 237);
+}
+
+.red{
+    color: red;
+}
+
+#inlog-txt{
+    text-align: center;
+    font-weight: 100;
+    grid-row: 1 / 2;
+}
+
+.logo-inlog{
+    position: relative;
+    border-radius: 50%;
+    border: solid 0.4vw rgb(38, 50, 56);
+}
+
+.inlog-container{
+    position: absolute;
+    background-color: white;
+    border: solid black 0.4vw;
+    display: grid;
+    border-radius: 2vw;
+    justify-content: center
+}
+
+.inlogbox1{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2 ;
+    
+}
+
+.inlogbox2{
+    grid-row: 3 / 4;
+    grid-column: 1 / 2 ;
+    
+}
+
+.btn{
+    position: relative;
+    border: #01579b solid 0.3vw;
+    color: #01579b;
+    border-radius: 1vw;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.btn1{
+    color: white;
+    background-color: #01579b;
+}
+
+
+.btn1:hover{
+    border: #2ca4ff solid 0.3vw;
+    background-color: #2ca4ff;
+}
+
+.btn2:hover{
+    border: #2ca4ff solid 0.3vw;
+}
+
+#registreren{
+    color: #01579b;
+    text-decoration: none;
+}
+
+#registreren:hover{
+    color: #2ca4ff;
 }

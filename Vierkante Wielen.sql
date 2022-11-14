@@ -15,9 +15,12 @@ USE `VierkanteWielenDB` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Accounts` (
   `AccountID` INT NOT NULL AUTO_INCREMENT,
-  `Username` VARCHAR(45) NOT NULL,
+  `Voornaam` VARCHAR(45) NOT NULL,
+  `Tussenvoegsel` VARCHAR(45),
+  `Achternaam` VARCHAR(45) NOT NULL,
+  `Telefoon` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
-  `E-mail` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`AccountID`))
 ENGINE = InnoDB;
 
@@ -92,6 +95,18 @@ CREATE TABLE IF NOT EXISTS `Lessen` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `Lespaketten`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Lespaketten` (
+  `PakketID` INT NOT NULL AUTO_INCREMENT,
+  `Pakketnaam` VARCHAR(255) NULL,
+  `Pakketprijs` DECIMAL(4,2) NULL,
+  `Pakketinfo` VARCHAR(500) NULL,
+  PRIMARY KEY (`PakketID`))
+ENGINE = InnoDB;
+
+INSERT INTO Accounts (`Username`, `Password`, `E-mail`) VALUES ('test', '123', 'test@example.com');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
