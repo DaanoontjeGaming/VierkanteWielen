@@ -74,6 +74,7 @@ h1 {
     justify-content: space-around;
     grid-template-columns: 20% 60%;
     padding-top: 5%;
+    padding-bottom: 2.5%;
 }
 
 .reviews2 {
@@ -81,7 +82,8 @@ h1 {
     display: grid;
     justify-content: space-around;
     grid-template-columns: 60% 20%;
-    padding-top: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
 }
 
 .reviews p {
