@@ -15,9 +15,12 @@ USE `VierkanteWielenDB` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Accounts` (
   `AccountID` INT NOT NULL AUTO_INCREMENT,
-  `Username` VARCHAR(45) NOT NULL,
+  `Voornaam` VARCHAR(45) NOT NULL,
+  `Tussenvoegsel` VARCHAR(45),
+  `Achternaam` VARCHAR(45) NOT NULL,
+  `Telefoon` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
-  `E-mail` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`AccountID`))
 ENGINE = InnoDB;
 
