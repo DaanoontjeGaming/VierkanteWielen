@@ -13,6 +13,7 @@ blauwgrijs: #BCD8ED / rgb(188, 216, 237) --10%--
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    text-decoration: none;
 }
 
 h1 {
@@ -41,11 +42,6 @@ h1 {
     height: auto;
     margin-bottom: -10px;
 }
-.reviewimage{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
 
 .imgcon {
     position: relative;
@@ -57,11 +53,29 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: solid white 0.7vw;
+    border-radius: 1vw;
+    font-size: 40px;
+    width: 30vw;
+    height: 12vh;
+    transition: 0.8s;
+    padding: 1vw;
 }
 
 .signup a {
     color: white;
     text-decoration: none;
+    font-weight: bolder;
+    transition: 0.8s;
+}
+
+.signup a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.signup:hover {
+    border: solid gray 1vw;
 }
 
 .info {
@@ -73,30 +87,19 @@ h1 {
     align-items: center;
 }
 
-.info p{
-    font-size: 10px;
-}
-.info h1{
-    font-size: 15px;
-    margin-bottom: 1%;
-}
-.info-h1-p{
-    text-align: center;
-    width: 40%;
+.info p {
+    font-size: 0.8vw;
 }
 
-.geslaagd-img {
+.imgclass2 {
     width: 35%;
     height: 35%;
-    outline: solid 2px #08549c;
-    border-radius: 5px;
-    margin-right: 2%;
 }
 
 .reviews {
     background-color: aliceblue;
     display: grid;
-    justify-content: center;
+    justify-content: space-around;
     grid-template-columns: 20% 60%;
     padding-top: 5%;
     padding-bottom: 2.5%;
@@ -110,6 +113,7 @@ h1 {
     padding-top: 2.5%;
     padding-bottom: 5%;
 }
+
 .reviews p {
     font-size: 1vw;
 }
@@ -119,14 +123,40 @@ h1 {
 }
 
 
-/* -Inlog pagina style- */
-#inlogpage{
+
+/* -Inlog & Registratie pagina style- */
+
+.forgot-pass{
+    position: relative;
+    font-size: 15px;
+    left: 2.5vw;
+    top: 1vh;
+}
+
+#inlogpage, #regipage{
     background-color: rgb(188, 216, 237);
 }
 
 .red{
     color: red;
 }
+
+.green{
+    color: green;
+}
+
+.h2-inlog{
+    font-size: 40px;
+    color: white;
+    margin: 20px 0px 0px 60px;
+    transition: 1.2s;
+  }
+  
+  .h2-inlog:hover{
+    font-size: 40px;
+    color: rgb(97, 97, 97);
+    transform: translateX(-40px);
+  }
 
 #inlog-txt{
     text-align: center;
@@ -140,7 +170,7 @@ h1 {
     border: solid 0.4vw rgb(38, 50, 56);
 }
 
-.inlog-container{
+.inlog-container, .regi-container{
     position: absolute;
     background-color: white;
     border: solid black 0.4vw;
@@ -192,9 +222,4 @@ h1 {
 
 #registreren:hover{
     color: #2ca4ff;
-}
-
-.nav-logo{
-    width: 35px;
-    height: 35px;
 }
