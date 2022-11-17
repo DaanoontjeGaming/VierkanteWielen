@@ -5,8 +5,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Database VierkanteWielenDB
--- -----------------------------------------------------
 CREATE DATABASE IF NOT EXISTS `VierkanteWielenDB` DEFAULT CHARACTER SET utf8 ;
 USE `VierkanteWielenDB` ;
 
@@ -15,13 +13,13 @@ USE `VierkanteWielenDB` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Accounts` (
   `AccountID` INT NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(45) NOT NULL,
-  `Tussenvoegsel` VARCHAR(45),
-  `Achternaam` VARCHAR(45) NOT NULL,
-  `Telefoon` VARCHAR(45) NOT NULL,
+  `Username` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
   `Email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`AccountID`))
+  `Function` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`AccountID`),
+  UNIQUE INDEX `Username_UNIQUE` (`Username` ASC) VISIBLE,
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -29,25 +27,16 @@ ENGINE = InnoDB;
 -- Table `Instructeurs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Instructeurs` (
-  `InstructeurID` INT NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(45) NULL,
-  `Achternaam` VARCHAR(45) NULL,
-  PRIMARY KEY (`InstructeurID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Leerlingen`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Leerlingen` (
-  `LeerlingID` INT NOT NULL AUTO_INCREMENT,
-  `Voornaam` VARCHAR(45) NULL,
-  `Achternaam` VARCHAR(45) NULL,
-  `Soort auto` VARCHAR(255) NULL,
-  `Leerlingencol` VARCHAR(45) NOT NULL,
+  `InstructeursID` INT NOT NULL AUTO_INCREMENT,
+  `Voornaam` VARCHAR(45) NOT NULL,
+  `Tussenvoegsel` VARCHAR(45) NULL,
+  `Achternaam` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Telefoon` VARCHAR(10) NOT NULL,
   `AccountID` INT NOT NULL,
-  PRIMARY KEY (`LeerlingID`),
-  CONSTRAINT `fk_Leerlingen_Accounts1`
+  PRIMARY KEY (`InstructeursID`),
+  INDEX `fk_Instructeurs_Accounts_idx` (`AccountID` ASC) VISIBLE,
+  CONSTRAINT `fk_Instructeurs_Accounts`
     FOREIGN KEY (`AccountID`)
     REFERENCES `Accounts` (`AccountID`)
     ON DELETE NO ACTION
@@ -56,12 +45,42 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Lesauto's`
+-- Table `Lespaketten`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Lesauto's` (
-  `AutoID` INT NOT NULL AUTO_INCREMENT,
-  `Type` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`AutoID`))
+CREATE TABLE IF NOT EXISTS `Lespaketten` (
+  `PakketID` INT NOT NULL AUTO_INCREMENT,
+  `Pakketnaam` VARCHAR(255) NOT NULL,
+  `Aantal uren` INT NOT NULL,
+  `Prijs` DECIMAL(6,2) NOT NULL,
+  PRIMARY KEY (`PakketID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Leerlingen`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Leerlingen` (
+  `LeerlingID` INT NOT NULL AUTO_INCREMENT,
+  `Voornaam` VARCHAR(45) NOT NULL,
+  `Tussenvoegsel` VARCHAR(45) NULL,
+  `Achternaam` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Telefoon` VARCHAR(10) NOT NULL,
+  `AccountID` INT NOT NULL,
+  `PakketID` INT NOT NULL,
+  PRIMARY KEY (`LeerlingID`),
+  INDEX `fk_Instructeurs_Accounts_idx` (`AccountID` ASC) VISIBLE,
+  INDEX `fk_Leerlingen_Lespaketten1_idx` (`PakketID` ASC) VISIBLE,
+  CONSTRAINT `fk_Instructeurs_Accounts0`
+    FOREIGN KEY (`AccountID`)
+    REFERENCES `Accounts` (`AccountID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Leerlingen_Lespaketten1`
+    FOREIGN KEY (`PakketID`)
+    REFERENCES `Lespaketten` (`PakketID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -69,44 +88,25 @@ ENGINE = InnoDB;
 -- Table `Lessen`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Lessen` (
-  `Instructeurs_InstructeurID` INT NOT NULL,
-  `Leerlingen_LeerlingID` INT NOT NULL,
-  `Datum` DATETIME NOT NULL,
-  `Lesduur (uren)` INT NOT NULL,
-  `AutoID` INT NOT NULL,
-  PRIMARY KEY (`Instructeurs_InstructeurID`, `Leerlingen_LeerlingID`),
-  INDEX `fk_Instructeurs_has_Leerlingen_Leerlingen1_idx` (`Leerlingen_LeerlingID` ASC) VISIBLE,
-  INDEX `fk_Instructeurs_has_Leerlingen_Instructeurs_idx` (`Instructeurs_InstructeurID` ASC) VISIBLE,
-  INDEX `fk_Lessen_Lesauto's1_idx` (`AutoID` ASC) VISIBLE,
-  CONSTRAINT `fk_Instructeurs_has_Leerlingen_Instructeurs`
-    FOREIGN KEY (`Instructeurs_InstructeurID`)
-    REFERENCES `Instructeurs` (`InstructeurID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Instructeurs_has_Leerlingen_Leerlingen1`
-    FOREIGN KEY (`Leerlingen_LeerlingID`)
+  `LesID` INT NOT NULL,
+  `Timeslot` DATETIME NOT NULL,
+  `LeerlingID` INT NOT NULL,
+  `InstructeursID` INT NOT NULL,
+  INDEX `fk_Leerlingen_has_Instructeurs_Instructeurs1_idx` (`InstructeursID` ASC) VISIBLE,
+  INDEX `fk_Leerlingen_has_Instructeurs_Leerlingen1_idx` (`LeerlingID` ASC) VISIBLE,
+  PRIMARY KEY (`LesID`),
+  CONSTRAINT `fk_Leerlingen_has_Instructeurs_Leerlingen1`
+    FOREIGN KEY (`LeerlingID`)
     REFERENCES `Leerlingen` (`LeerlingID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Lessen_Lesauto's1`
-    FOREIGN KEY (`AutoID`)
-    REFERENCES `Lesauto's` (`AutoID`)
+  CONSTRAINT `fk_Leerlingen_has_Instructeurs_Instructeurs1`
+    FOREIGN KEY (`InstructeursID`)
+    REFERENCES `Instructeurs` (`InstructeursID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `Lespaketten`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Lespaketten` (
-  `PakketID` INT NOT NULL AUTO_INCREMENT,
-  `Pakketnaam` VARCHAR(255) NULL,
-  `Pakketprijs` DECIMAL(4,2) NULL,
-  `Pakketinfo` VARCHAR(500) NULL,
-  PRIMARY KEY (`PakketID`))
-ENGINE = InnoDB;
-
-INSERT INTO Accounts (`Username`, `Password`, `E-mail`) VALUES ('test', '123', 'test@example.com');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
