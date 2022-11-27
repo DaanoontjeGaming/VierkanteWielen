@@ -1,0 +1,41 @@
+/* Tijdelijk aparte stylesheet omdat aanpassingen in style.css niet werden doorgevoerd */
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+body{
+  background-color: #c0dcec;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  outline: 1px solid lightgreen;
+}
+
+.contact-container {
+  border-radius: 5px;
+  background-color: #01579b;
+  padding: 20px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
