@@ -16,7 +16,7 @@ if(isset($_GET["loguit"])){
     <link rel="stylesheet" type="text/css" href="responsive.css">
 </head>
 <body id="inlogpage">
-    <a href="index.php"><h2 class="h2-inlog">< Homepage</h2></a>
+<?php include('navbar.php')?>
     <img class="logo-inlog" src="Images/logo.jpg">
     <div class="inlog-container">
     <h1 id="inlog-txt">Log in op je account</h1>
@@ -33,7 +33,7 @@ if(isset($_GET["loguit"])){
         <input class="btn1 btn" type="submit" name="submit" value="Log in"> <br>
         <button class="btn2 btn"><a id="registreren" href="registreren.php">Registreren</a></button>
     </form>
-    <?php print $_SESSION["false-user-pass"]; ?>
+    <?php //print $_SESSION["false-user-pass"]; ?>
     </div>
 </body>
 </html>

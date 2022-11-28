@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="responsive.css">
 </head>
 <body id="regipage">
+    <?php include('navbar.php')?>
     <img class="logo-inlog" src="Images/logo.jpg">
     <div class="regi-container">
     <h1 id="inlog-txt">Maak je account aan!</h1>
@@ -54,7 +55,7 @@ session_start();
     </form>
     <br>
     <br>
-    <?php echo $_SESSION["false-user-pass"]; ?>
+    <?php //echo $_SESSION["false-user-pass"]; ?>
     </div>
 </body>
 </html>

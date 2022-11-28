@@ -15,12 +15,7 @@ $_SESSION['false-user-pass'] = "";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="Navi">
-        <a href="index.php">Home</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="inloggen.php">Log in</a>
-    </div>
+<?php include('navbar.php')?>
     <div class="imgcon">
         <img class="imgclass" src="Images/download.png">
         <div class="signup"><a href="registreren.php">Begin met het rijden!</a></div>
@@ -132,16 +127,6 @@ $_SESSION['false-user-pass'] = "";
         </ul>
     </div>
 </div>
-<footer>
-    <div class="footer-left">
-        <img src="images/logo.jpg" class="footer-img">
-        <p>Copyright Vierkante Wielen 2022</p>
-    </div>
-    <div class="social-icons">
-        <a href="#" class="fa fa-facebook social-icon"></a>
-        <a href="#" class="fa fa-twitter social-icon"></a>
-        <a href="#" class="fa fa-instagram social-icon"></a>
-    </div>
-</footer>
+<?php include('footer.php')?>
 </body>
 </html>

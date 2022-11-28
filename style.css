@@ -272,7 +272,9 @@ h1 {
 .grid-item ul{
     list-style-type: none;
 }
-
+.grid-item li{
+    margin-top: 7px;
+}
 /* Footer styling */
 footer{
     background-color: aliceblue;
