@@ -272,3 +272,33 @@ h1 {
 .grid-item ul{
     list-style-type: none;
 }
+
+/* Footer styling */
+footer{
+    background-color: aliceblue;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.footer-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.footer-left p{
+    margin-left: 10px;
+}
+.footer-img{
+    width: 40px;
+    height: 40px;
+}
+.social-icons{
+    font-size: 25px;
+}
+.social-icon{
+    color: black;
+    margin-left: 5px;
+}
