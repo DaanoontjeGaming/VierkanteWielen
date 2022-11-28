@@ -10,26 +10,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" type="text/css" href="style.css">
 <body>
+<<<<<<< HEAD:contact.php
 <?php include('navbar.php')?>
 <div class="contact-container">
   <form action="contact-form-handler.php" method="post">
     <label for="name">Naam</label>
     <input type="text" id="name" name="name" placeholder="Uw naam..">
+=======
+  <div class="Navi">
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Log in</a>
+  </div>
+>>>>>>> c71e44293daa08604d84153a6711c491c3fc4aff:contact.html
 
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Uw email..">
+  <div class="contact-container">
+    <form action="contact-form-handler.php" method="post">
+      <label for="name">Naam</label>
+      <input type="text" id="name" name="name" placeholder="Uw naam..">
 
-    <label for="subject">Onderwerp</label>
-    <input type="text" id="subject" name="subject" placeholder="Het onderwerp..">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Uw email..">
+
+      <label for="subject">Onderwerp</label>
+      <input type="text" id="subject" name="subject" placeholder="Het onderwerp..">
   
-    <label for="message">Bericht</label>
-    <textarea id="message" name="message" placeholder="Type hier uw bericht.." style="height:200px"></textarea>
+      <label for="message">Bericht</label>
+      <textarea id="message" name="message" placeholder="Type hier uw bericht.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
 
   </form>
 </div>
 <?php include('footer.php')?>
 </body>
+<<<<<<< HEAD:contact.php
 </html>
+=======
+</html>
+>>>>>>> c71e44293daa08604d84153a6711c491c3fc4aff:contact.html
