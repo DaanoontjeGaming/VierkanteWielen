@@ -53,20 +53,21 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: solid white 0.7vw;
-    border-radius: 1vw;
-    font-size: 40px;
-    width: 30vw;
-    height: 12vh;
+    border: solid white 0.3vw;
+    border-radius: 0.6vw;
     transition: 0.8s;
-    padding: 1vw;
 }
 
 .signup a {
     color: white;
+    font-size: 35px;
     text-decoration: none;
     font-weight: bolder;
-    transition: 0.8s;
+    transition: 0.3s;
+    margin: 2vh;
+    text-align: center;
+    height: 12vh;
+    width: 30vw;
 }
 
 .signup a:hover {
@@ -75,7 +76,7 @@ h1 {
 }
 
 .signup:hover {
-    border: solid gray 1vw;
+    border: solid gray 0.3vw;
 }
 
 .info {
@@ -86,9 +87,18 @@ h1 {
     background-color: lightgray;
     align-items: center;
 }
+.info img{
+    border-radius: 5px;
+    border: 2px solid #384c5c;
+}
 
-.info p {
-    font-size: 0.8vw;
+.info-text{
+    font-size: 1.3em;
+    width: 40vw;
+}
+.info-text h1{
+    font-size: 1.3em;
+    margin-bottom: 5px;
 }
 
 .imgclass2 {
@@ -121,7 +131,11 @@ h1 {
 .reviews2 p {
     font-size: 1vw;
 }
-
+.review-img{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
 
 
 /* -Inlog & Registratie pagina style- */
