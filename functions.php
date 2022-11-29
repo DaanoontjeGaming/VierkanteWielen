@@ -19,6 +19,41 @@ function getUserdata($ingelogd, $username){
     </div>";
 }};
 
+function getLespaketten($database, $ingelogd){
+foreach($database->query('SELECT * FROM `Lespaketten`') as $pakketData){
+echo '
+<div class="grid-item">
+    <img src="images/logo.jpg">
+        <h1>'.$pakketData['Pakketnaam'].'</h1>
+        <h3>€'.$pakketData['Prijs'].'</h3>';
+        if($pakketData['Pakketsoort'] === 'Compleet'){
+        echo   '<ul>
+            <li>Theorie cursus</li>
+            <li>Inclusief CBR-theorie examen</li>
+            <li>40 uur rijles</li>
+            <li>Inclusief CBR-praktijk examen</li>
+            <li>Schakel auto of Automaat</li>
+            <li>Ongebruikte lessen worden 50% terugbetaald</li>
+            <li>1% korting op extra lessen</li>
+            </ul>
+            </div>';
+        } else {
+        echo '<ul>
+            <li>40 uur rijles</li>
+            <li>Inclusief CBR-praktijkexamen</li>';
+            if($pakketData['Autosoort'] === 'Schakelauto'){
+            echo '<li>Schakelauto</li>
+                  <li>Ongebruikte lessen worden 50% terugbetaald</li>
+                  <li>1% korting op extra lessen</li>';
+            } else {echo '<li>Automaat</li>
+                          <li>Ongebruikte lessen worden 50% terugbetaald</li>
+                          <li>1% korting op extra lessen</li>';}
+        echo '</ul>';
+        if($ingelogd){
+            //Hier komt een button om een pakket te kopen!
+            // Alleen als er is ingelogd komt er een buy button.
+        }
+   echo '</div>';}}}
 
 ?>
 <!-- 
