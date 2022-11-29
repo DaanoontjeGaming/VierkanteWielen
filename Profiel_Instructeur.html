@@ -22,16 +22,53 @@
     <h1>Welkom bij je account,</h1>
 </div>
 
-<!---Account Details--->
+<!---ACCOUNT DETAILS --->
 <div class="roundRectDark">
-    <h2>Jouw account</h2>
-    <div class="edit"><a style="color:white;" href="#">Edit</a></div>
+    <h2 class="rectTitle">Jouw account</h2>
+    <section class="section">
+        <div>
+            <p>(accountnaam)</p>
+        </div>
+        <div>
+            <p>(klantnummer)</p>
+        </div>
+    </section>
+    <section class="section">
+        <div>
+            <p>(accountemail)</p>
+        </div>
+        <div>
+            <p>(accounttelefoon)</p>
+        </div>
+    </section>
+    <section class="section">
+        <button class="buttonBlue"><a style="color:white;" href="#">Edit</a></button>
+    </section>
 </div>
 
 
-<!---Account Details--->
+<!---ZIEK MELDEN --->
 <div class="roundRectLight">
-    <h2>Ziek Melden</h2>
+    <h2 class="rectTitle">Ziek Melden</h2>
+    <section class="section">
+        <form>
+            <label for="datumVanaf">Datum vanaf:</label><br>
+            <input type="date" id="datumVanaf" name="datumVanaf"><br>
+            <label for="datumTot">Datum tot:</label><br>
+            <input type="date" id="datumTot" name="datumVanaf"><br>
+        </form>
+    </section>
+    <section class="section">
+        <div>
+            <p></p>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </section>
+    <section class="section">
+        <button class="buttonBlue"><a style="color:white;" href="#">Verzenden</a></button>
+    </section>
 </div>
 
 </body>
