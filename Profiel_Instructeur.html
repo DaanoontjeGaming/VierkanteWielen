@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn profiel</title>
-    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 </div>
 
 <!---ACCOUNT DETAILS --->
-<div class="roundRectDark">
+<div class="roundRect" style="background-color:lightgray">
     <h2 class="rectTitle">Jouw account</h2>
     <section class="section">
         <div>
@@ -48,22 +48,28 @@
 
 
 <!---ZIEK MELDEN --->
-<div class="roundRectLight">
+<div class="roundRect" style="background-color:#E6E6E6">
     <h2 class="rectTitle">Ziek Melden</h2>
     <section class="section">
         <form>
             <label for="datumVanaf">Datum vanaf:</label><br>
-            <input type="date" id="datumVanaf" name="datumVanaf"><br>
+            <input type="date" id="datumVanaf" name="datum"><br>
             <label for="datumTot">Datum tot:</label><br>
-            <input type="date" id="datumTot" name="datumVanaf"><br>
+            <input type="date" id="datumTot" name="datum"><br>
         </form>
     </section>
     <section class="section">
         <div>
-            <p></p>
+            <p>Reden:</p>
         </div>
         <div>
-            <p></p>
+            <form>
+                <input type="radio" id="ziek" name="reden" value="ziek">
+                <label for="ziek">Ziek</label><br>
+                <input type="radio" id="anders" name="reden" value="anders">
+                <label for="anders">Anders:</label>
+                <input type="text" id="andersReden" name="reden">
+            </form>
         </div>
     </section>
     <section class="section">
