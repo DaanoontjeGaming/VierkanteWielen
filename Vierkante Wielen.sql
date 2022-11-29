@@ -53,12 +53,15 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Lespaketten` (
   `PakketID` INT NOT NULL AUTO_INCREMENT,
   `Pakketnaam` VARCHAR(255) NOT NULL,
-  `Lesuren` INT NOT NULL,
   `Prijs` DECIMAL(6,2) NOT NULL,
-  `Soort auto` VARCHAR(45) NOT NULL,
+  `Autosoort` VARCHAR(45) NOT NULL,
+  `Lesuren` INT NOT NULL,
   PRIMARY KEY (`PakketID`))
 ENGINE = InnoDB;
 
+INSERT INTO `Lespaketten` (`Pakketnaam`, `Prijs`, `Autosoort`, `Lesuren`)
+VALUES ('Schakel 36', '2199', 'Schakelauto', '36'), ('Schakel 40', '2499', 'Schakelauto', '40'), ('Schakel 44', '2799', 'Schakelauto', '44'), ('Auto 36', '2399', 'Automaat', '36'),
+('Auto 40', '2699', 'Automaat', '40'), ('Auto 44', '2999', 'Automaat', '44'), ('Compleet 36', '2999', 'Beide', '36'), ('Compleet 40', '3399', 'Beide', '40'), ('Compleet 44', '3799', 'Beide', '44');
 
 -- -----------------------------------------------------
 -- Table `Leerlingen`
