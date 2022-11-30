@@ -14,8 +14,8 @@ $_SESSION['false-user-pass'] = "";
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+    <?php include('navbar.php')?>
 <body>
-<?php include('navbar.php')?>
     <div class="imgcon">
         <img class="imgclass" src="Images/download.png">
         <div class="signup"><a href="registreren.php">Begin met het rijden!</a></div>
@@ -52,18 +52,76 @@ $_SESSION['false-user-pass'] = "";
         <img class="review-img" src="Images/persoon4.png" alt="">
     </div>
 <div class="grid-container">
-    <?php
-    $user = 'root';
-    $pass = 'root';
-    $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
-    echo getLespaketten($db, $_SESSION['Ingelogd']);
-    ?>       
+    <div class="grid-item">
+        <img src='images/logo.jpg'>
+        <h1>Starter</h1>
+        <h3>30 lessen $1999</h3>
+        <ul>
+            <li>30 rijlessen van 60 minuten.</li>
+            <li>Inclusief theorie examen</li>
+            <li>Inclusief praktijk examen</li>
+            <li>Vaste instructeur</li>
+            <li>Nieuwe les auto</li>
+            <li>Snel beginnen</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <img src='images/logo.jpg'>
+        <h1>Medium</h1>
+        <h3>20 lessen $1699</h3>
+        <ul>
+            <li>20 rijlessen van 60 minuten.</li>
+            <li>Inclusief theorie examen</li>
+            <li>Inclusief praktijk examen</li>
+            <li>Vaste instructeur</li>
+            <li>Nieuwe les auto</li>
+            <li>Snel beginnen</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <img src='images/logo.jpg'>
+        <h1>Gevorderd</h1>
+        <h3>10 lessen $1199</h3>
+        <ul>
+            <li>10 rijlessen van 60 minuten.</li>
+            <li>Inclusief theorie examen</li>
+            <li>Vaste instructeur</li>
+            <li>Nieuwe les auto</li>
+            <li>Snel beginnen</li>
+        </ul>
+    </div>
     <div class="grid-item">
         <img src='images/logo.jpg'>
         <h1>Losse les</h1>
         <h3>1 les $59.99</h3>
         <ul>
             <li>1 rijles van 60 minuten.</li>
+            <li>Nieuwe les auto</li>
+            <li>Snel beginnen</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <img src='images/logo.jpg'>
+        <h1>Starter</h1>
+        <h3>30 lessen $1999</h3>
+        <ul>
+            <li>30 rijlessen van 60 minuten.</li>
+            <li>Inclusief theorie examen</li>
+            <li>Inclusief praktijk examen</li>
+            <li>Vaste instructeur</li>
+            <li>Nieuwe les auto</li>
+            <li>Snel beginnen</li>
+        </ul>
+    </div>
+    <div class="grid-item">
+        <img src='images/logo.jpg'>
+        <h1>Starter</h1>
+        <h3>30 lessen $1999</h3>
+        <ul>
+            <li>30 rijlessen van 60 minuten.</li>
+            <li>Inclusief theorie examen</li>
+            <li>Inclusief praktijk examen</li>
+            <li>Vaste instructeur</li>
             <li>Nieuwe les auto</li>
             <li>Snel beginnen</li>
         </ul>
