@@ -52,43 +52,12 @@ $_SESSION['false-user-pass'] = "";
         <img class="review-img" src="Images/persoon4.png" alt="">
     </div>
 <div class="grid-container">
-    <div class="grid-item">
-        <img src='images/logo.jpg'>
-        <h1>Starter</h1>
-        <h3>30 lessen $1999</h3>
-        <ul>
-            <li>30 rijlessen van 60 minuten.</li>
-            <li>Inclusief theorie examen</li>
-            <li>Inclusief praktijk examen</li>
-            <li>Vaste instructeur</li>
-            <li>Nieuwe les auto</li>
-            <li>Snel beginnen</li>
-        </ul>
-    </div>
-    <div class="grid-item">
-        <img src='images/logo.jpg'>
-        <h1>Medium</h1>
-        <h3>20 lessen $1699</h3>
-        <ul>
-            <li>20 rijlessen van 60 minuten.</li>
-            <li>Inclusief theorie examen</li>
-            <li>Inclusief praktijk examen</li>
-            <li>Vaste instructeur</li>
-            <li>Nieuwe les auto</li>
-            <li>Snel beginnen</li>
-        </ul>
-    </div>
-    <div class="grid-item">
-        <img src='images/logo.jpg'>
-        <h1>Gevorderd</h1>
-        <h3>10 lessen $1199</h3>
-        <ul>
-            <li>10 rijlessen van 60 minuten.</li>
-            <li>Inclusief theorie examen</li>
-            <li>Vaste instructeur</li>
-            <li>Nieuwe les auto</li>
-            <li>Snel beginnen</li>
-        </ul>
+     <?php
+    $user = 'root';
+    $pass = 'root';
+    $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
+    echo getLespaketten($db, $_SESSION['Ingelogd']);
+    ?>       
     </div>
     <div class="grid-item">
         <img src='images/logo.jpg'>
@@ -100,32 +69,7 @@ $_SESSION['false-user-pass'] = "";
             <li>Snel beginnen</li>
         </ul>
     </div>
-    <div class="grid-item">
-        <img src='images/logo.jpg'>
-        <h1>Starter</h1>
-        <h3>30 lessen $1999</h3>
-        <ul>
-            <li>30 rijlessen van 60 minuten.</li>
-            <li>Inclusief theorie examen</li>
-            <li>Inclusief praktijk examen</li>
-            <li>Vaste instructeur</li>
-            <li>Nieuwe les auto</li>
-            <li>Snel beginnen</li>
-        </ul>
-    </div>
-    <div class="grid-item">
-        <img src='images/logo.jpg'>
-        <h1>Starter</h1>
-        <h3>30 lessen $1999</h3>
-        <ul>
-            <li>30 rijlessen van 60 minuten.</li>
-            <li>Inclusief theorie examen</li>
-            <li>Inclusief praktijk examen</li>
-            <li>Vaste instructeur</li>
-            <li>Nieuwe les auto</li>
-            <li>Snel beginnen</li>
-        </ul>
-    </div>
+
 </div>
 <?php include('footer.php')?>
 </body>
