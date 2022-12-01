@@ -28,28 +28,31 @@ $_SESSION['false-user-pass'] = "";
         <img class="imgclass2" src="images/geslaagd.jpg" alt="Foto van geslaagde rijles student.">
     </div>
     <div class="reviews">
-        <img class="review-img" src="Images/persoon1.png" alt="">
-        <div>
-            <p>Dankzij de leuke en goede leerzame rijlessen in een keer geslaagd voor mijn praktijkexamen. Ook heb ik veel gehad aan de opnames die werden gemaakt tijdens de rijles.</p>
-        </div>
+    <div class="review-slide fade">
+        <img class="review-img" src="Images/persoon1.png">
+        <div class="review-score">★★★★★</div>
+        <div class="review-text">Dankzij de leuke en goede leerzame rijlessen in een keer geslaagd voor mijn praktijkexamen. <br>
+        Ook heb ik veel gehad aan de opnames die werden gemaakt tijdens de rijles.</div>
     </div>
-    <div class="reviews2">
-        <div>
-            <p>Super rijschool in Almere. Goeie instructeur die mij gelijk op mn gemak stelde en het gevoel gaf dat ik het kon. Dankzij jullie dat ook in 1 x geslaagd !!</p>
-        </div>
-        <img class="review-img" src="Images/persoon2.png" alt="">
+    <div class="review-slide fade">
+        <img class="review-img" src="Images/persoon2.png">
+        <div class="review-score">★★★★★</div>
+        <div class="review-text">Super rijschool in Almere.
+        Goeie instructeur die mij gelijk op mn gemak stelde en het gevoel gaf dat ik het kon. Dankzij jullie dat ook in 1 x geslaagd !!</div>
     </div>
-    <div class="reviews">
-        <img class="review-img" src="Images/persoon3.png" alt="">
-        <div>
-            <p>Super! Goede en duidelijke uitleg, flexibel in afspraken maken en Sebastiaan maakt rijlessen nemen zelfs leuk en gezellig. Ik ga het zeker missen. Bedankt voor alles!</p>
-        </div>
+    <div class="review-slide fade">
+        <img class="review-img" src="Images/persoon3.png">
+        <div class="review-score">★★★★★</div>
+        <div class="review-text">Super! Goede en duidelijke uitleg, flexibel in afspraken maken en Sebastiaan maakt rijlessen nemen <br> zelfs leuk en gezellig.
+        Ik ga het zeker missen. Bedankt voor alles!</div>
     </div>
-    <div class="reviews2">
-        <div>
-            <p>"Je krijgt de ruimte om je eigen rijlessen in te plannen. Als je bijna gaat afrijden heb jij een streepje voor in de planning, en als je voor de zekerheid een extra lesje wilt dan is dat zo geregeld. Om het al een top rijschool, en buiten dat de auto heerlijk rijdt ga ik ook de gezelligheid missen van Sebastiaan!"</p>
-        </div>
-        <img class="review-img" src="Images/persoon4.png" alt="">
+    <div class="review-slide fade">
+        <img class="review-img" src="Images/persoon4.png">
+        <div class="review-score">★★★★★</div>
+        <div
+        <div class="review-text">Je krijgt de ruimte om je eigen rijlessen in te plannen. Als je bijna gaat afrijden heb jij een streepje voor in de planning, <br> en als je voor de zekerheid een extra lesje wilt dan is dat zo geregeld. <br>
+        Om het al een top rijschool, en buiten dat de auto heerlijk rijdt ga ik ook de gezelligheid missen van Sebastiaan!"</div>
+    </div>
     </div>
 <div class="grid-container">
      <?php
