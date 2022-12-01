@@ -1,6 +1,8 @@
 let slideIndex = 0;
 showSlides();
 
+
+
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("review-slide");
@@ -10,5 +12,5 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 3000); 
+  setTimeout(showSlides, 3600); 
 }
