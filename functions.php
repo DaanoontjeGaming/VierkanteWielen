@@ -30,24 +30,28 @@ echo '
         echo   '<ul>
             <li>Theorie cursus</li>
             <li>Inclusief CBR-theorie examen</li>
-            <li>40 uur rijles</li>
+            <li>'.$pakketData['Lesuren'].'uur rijles</li>
             <li>Inclusief CBR-praktijk examen</li>
             <li>Schakel auto of Automaat</li>
             <li>Ongebruikte lessen worden 50% terugbetaald</li>
-            <li>1% korting op extra lessen</li>
+            <li>0% korting op extra lessen</li>
             </ul>
             </div>';
         } else {
         echo '<ul>
-            <li>40 uur rijles</li>
+            <li>'.$pakketData['Lesuren'].' uur rijles</li>
             <li>Inclusief CBR-praktijkexamen</li>';
             if($pakketData['Autosoort'] === 'Schakelauto'){
             echo '<li>Schakelauto</li>
                   <li>Ongebruikte lessen worden 50% terugbetaald</li>
-                  <li>1% korting op extra lessen</li>';
+                  <li>0% korting op extra lessen</li>';
+            } else if ($pakketData['Autosoort'] === 'Beide') {
+                echo '<li>Schakelauto of Automaat</li>
+                <li>1 extra les van 1 uur</li>
+                <li>Kan direct worden ingepland</li>';
             } else {echo '<li>Automaat</li>
                           <li>Ongebruikte lessen worden 50% terugbetaald</li>
-                          <li>1% korting op extra lessen</li>';}
+                          <li>0% korting op extra lessen</li>';}
         echo '</ul>';
         if($ingelogd){
             //Hier komt een button om een pakket te kopen!
