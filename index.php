@@ -49,7 +49,6 @@ $_SESSION['false-user-pass'] = "";
         <div class="review-slide fade">
             <img class="review-img" src="Images/persoon4.png">
             <div class="review-score">★★★★★</div>
-            <div
             <div class="review-text">Je krijgt de ruimte om je eigen rijlessen in te plannen. Als je bijna gaat afrijden heb jij een streepje voor in de planning, <br> en als je voor de zekerheid een extra lesje wilt dan is dat zo geregeld. <br>
             Om het al een top rijschool, en buiten dat de auto heerlijk rijdt ga ik ook de gezelligheid missen van Sebastiaan!"</div>
         </div>
@@ -62,7 +61,7 @@ $_SESSION['false-user-pass'] = "";
     echo getLespaketten($db, $_SESSION['Ingelogd']);
     ?> 
 </div>
-<?php include('footer.php')?>
 <script src="script.js"></script>
+<?php include('footer.php')?>
 </body>
 </html>
