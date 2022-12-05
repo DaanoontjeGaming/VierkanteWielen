@@ -12,15 +12,15 @@ $wachtwoord2 = $_POST['Password2'];
 $email = $_POST['Email'];
 
 $user = 'root';
-$pass = 'root';
-$db = new PDO('mysql:vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
+$pass = '';
+$db = new PDO('mysql:127.0.0.1;dbname=vierkantewielendb', $user, $pass);
     if($wachtwoord == $wachtwoord2){
-        $db->query("INSERT INTO Accounts (`Username`, `Password`, `Email`, `Function`) VALUES ('$gebruikersnaam', '$wachtwoord', '$email', 'Leerling')");
-        $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'");
+        $db->query("INSERT INTO vierkantewielendb.Accounts (`Username`, `Password`, `Email`, `Function`) VALUES ('$gebruikersnaam', '$wachtwoord', '$email', 'Leerling')");
+        $ID = $db->query("SELECT AccountID FROM vierkantewielendb.Accounts WHERE Username = '$gebruikersnaam'");
         $result = $ID->fetch();
         $string = $result[0];
         $accountID = intval($string);
-        $db->query("INSERT INTO Leerlingen (`Voornaam`, `Tussenvoegsel`, `Achternaam`, `Telefoon`, `Email`, `AccountID`) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$telefoon', '$email', '$accountID')");
+        $db->query("INSERT INTO vierkantewielendb.Leerlingen (`Voornaam`, `Tussenvoegsel`, `Achternaam`, `Telefoon`, `Email`, `AccountID`) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$telefoon', '$email', '$accountID')");
         $_SESSION['false-user-pass'] = "<p class='green melding'>Account aangemaakt!<p>";
         header("location: inloggen.php");
     } else {

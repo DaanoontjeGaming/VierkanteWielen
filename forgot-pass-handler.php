@@ -7,7 +7,9 @@ $to = $_POST['email']; //Naar wie de contact form content word gestuurd (rijscho
 $servermail = ''; //Email die gebruikt word om mails te versturen
 $servermailpass = ''; //Email app wachtwoord (anders als normaal WW zie https://myaccount.google.com/u/0/apppasswords)
 
-$db = new PDO('mysql:127.0.0.1;dbname=resetpw', 'root', '');
+$user = 'root';
+$pass = '';
+$db = new PDO('mysql:127.0.0.1;dbname=vierkantewielendb', $user, $pass);
 $result = $db->query("SELECT * from resetpw.resetpwtable WHERE email='$to'");
 if ($result->rowCount()>0) {
   $db->query("UPDATE resetpw.resetpwtable SET reset_code='$code' WHERE email='$to'");
