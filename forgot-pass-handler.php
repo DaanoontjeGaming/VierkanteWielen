@@ -2,10 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+include '../../private/creds.php';
+
 $code = rand(1000,9999);
 $to = $_POST['email']; //Naar wie de contact form content word gestuurd (rijschoolhouder vierkantewielen@gmail.com)
-$servermail = ''; //Email die gebruikt word om mails te versturen
-$servermailpass = ''; //Email app wachtwoord (anders als normaal WW zie https://myaccount.google.com/u/0/apppasswords)
+
 require 'vendor/autoload.php';
 $mail = new PHPMailer(true);
 
@@ -15,7 +16,7 @@ $db = new PDO('mysql:127.0.0.1;dbname=vierkantewielendb', $user, $pass);
 $result = $db->query("SELECT * from vierkantewielendb.Accounts WHERE Email='$to'");
 if ($result->rowCount()>0) {
   $db->query("UPDATE vierkantewielendb.Accounts SET resetpw_token='$code' WHERE email='$to'");
-  echo "exists";
+  echo "exists ";
   try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -38,6 +39,7 @@ if ($result->rowCount()>0) {
 
     $mail->send();
     echo 'Reset code has been sent';
+    header('Location: set-new-pass.php');
     // header('Location: index.php');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

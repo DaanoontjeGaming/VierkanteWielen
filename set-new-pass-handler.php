@@ -19,7 +19,7 @@ if ($password1 == $password2){
   if($result->rowCount()>0){
     $db->query("UPDATE vierkantewielendb.Accounts SET Password='$password1' WHERE resetpw_token='$rcode'");
     $db->query("UPDATE vierkantewielendb.Accounts SET resetpw_token='0' WHERE resetpw_token='$rcode'");
-    echo 'Succesfully changed password and invalidated'
+    echo 'Succesfully changed password and invalidated reset token';
   } else {
     echo'reset token invalid';
   }

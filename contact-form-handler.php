@@ -2,14 +2,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+include '../../private/creds.php';
+
 $name = $_POST['name']; //Naam van bezoeker
 $email= $_POST['email']; //mail van bezoeker
 $subject = $_POST['subject']; //onderwerp
 $message= $_POST['message']; //bericht van bezoeker
 
 $to = "vincenthulsebos@gmail.com"; //Naar wie de contact form content word gestuurd (rijschoolhouder vierkantewielen@gmail.com)
-$servermail = ''; //Email die gebruikt word om mails te versturen
-$servermailpass = ''; //Email app wachtwoord (anders als normaal WW zie https://myaccount.google.com/u/0/apppasswords)
+
 
 
 require 'vendor/autoload.php';
