@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS `Accounts` (
   `Password` VARCHAR(45) NOT NULL,
   `Email` VARCHAR(45) NOT NULL,
   `Function` VARCHAR(45) NOT NULL,
+  `resetpw_token` SMALLINT DEFAULT 0,
   PRIMARY KEY (`AccountID`),
   UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
   UNIQUE INDEX `Email_UNIQUE` (`Email` ASC))
