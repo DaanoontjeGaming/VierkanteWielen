@@ -349,6 +349,9 @@ footer{
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .footer-left{
     display: flex;
