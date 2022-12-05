@@ -20,25 +20,37 @@
 <!---ACCOUNT DETAILS --->
 <div class="roundRect" style="background-color:lightgray">
     <h2 class="rectTitle">Jouw account</h2>
+    <?php
+    $user = 'root';
+    $pass = 'root';
+    $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
+    $AccountData = $db->query("SELECT * FROM Accounts WHERE Username = '$gebruikersnaam'");
+    $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'");
+    $result = $ID->fetch();
+    $string = $result[0];
+    $accountID = intval($string);
+    $InstructeurData = $db->query("SELECT * FROM Instructeurs WHERE AccountID = '$accountID'");
+    $username = $AccountData['Username'];
+    $email = $InstructeurData['Email'];
+    $telefoon = $InstructeurData['Telefoon'];
+    echo'
     <section class="section">
         <div>
-            <p>(accountnaam)</p>
-        </div>
-        <div>
-            <p>(klantnummer)</p>
+            <p>'.$username.'</p>
         </div>
     </section>
     <section class="section">
         <div>
-            <p>(accountemail)</p>
+            <p>'.$email.'</p>
         </div>
         <div>
-            <p>(accounttelefoon)</p>
+            <p>'.$telefoon.'</p>
         </div>
     </section>
     <section class="section">
-        <button type="button" class="buttonBlue"><a style="color:white;" href="#">Edit</a></button>
-    </section>
+        <button type="button" class="buttonBlue"><a style="color:white;" href="editaccinfo.php">Edit</a></button>
+    </section>';
+    ?>
 </div>
 
 
@@ -72,7 +84,6 @@
     </section>
 </div>
 
-<?php include('footer.php')?>
 </body>
 
 </html>
