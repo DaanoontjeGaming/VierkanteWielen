@@ -23,7 +23,8 @@ $_SESSION['false-user-pass'] = "";
     <div class="info">
         <div class='info-text'>
             <h1>Rijschool vierkante wielen helpt u op weg!</h1>
-            <p>Rijschool Vierkante Wielen bestaat al 19 jaar. Wij geven les in een ontspannen en vakkundige manier. Zo hebben wij al meer dan 300 leerlingen geholpen met het behalen van hun rijbewijs. Waar wacht u nog op?</p>
+            <p>Rijschool Vierkante Wielen bestaat al 19 jaar. Wij geven les in een ontspannen en vakkundige manier.
+               Zo hebben wij al meer dan 300 leerlingen geholpen met het behalen van hun rijbewijs. Waar wacht u nog op?</p>
         </div>
         <img class="imgclass2" src="Images/geslaagd.jpg" alt="Foto van geslaagde rijles student.">
     </div>
