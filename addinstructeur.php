@@ -4,7 +4,7 @@ require_once('functions.php');
 
 $user = 'root';
 $pass = 'root';
-$db = new PDO('mysql:vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
+$db = new PDO('mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
 if($wachtwoord === $wachtwoord2){
     $db->query("INSERT INTO Accounts (`Username`, `Password`, `Email`, `Function`) VALUES ('$gebruikersnaam', '$wachtwoord', '$email', 'Instructeur')");
     $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'");

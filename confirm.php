@@ -7,7 +7,7 @@ $password = $_POST['Password'];
 
 $user = 'root';
 $pass = 'root';
-$db = new PDO('mysql:vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
+$db = new PDO('mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
 foreach($db->query('SELECT * FROM Accounts') as $accData){
     $username2 = $accData['Username'];
     $password2 = $accData['Password'];
