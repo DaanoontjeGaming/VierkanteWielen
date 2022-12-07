@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn profiel</title>
     <link rel="stylesheet" type="text/css" href="style_profiel.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
@@ -17,30 +18,41 @@
         <a href="#">Mijn Profiel</a>
     </div>
 
-    <div class="welcome">Welkom bij je account, (naam functie)</div>
+    <div class="welcome">Welkom bij je account,</div>
 
     <!---Account Details--->
-    <div class="roundRectDark">
-        <h2>Jouw account</h2>
-        <div class="edit"><a style="color:white;" href="#">Edit</a></div>
-        <br>
-        <p>asdgfa</p>
-        <br>
-        <p>asdgfa</p>
-        <br>
-        <p>asdgfa</p>
+    <div class="roundRect" style="background-color:#E6E6E6">
+        <h2 class="rectTitle">Jouw account</h2>
+        <section class="section">
+            <div>
+                <p>username</p>
+            </div>
+        </section>
+        <section class="section">
+            <div>
+                <p>email</p>
+            </div>
+            <div>
+                <p>telefoon</p>
+            </div>
+        </section>
+        <section class="section">
+            <button type="button" class="buttonBlue">
+                <a style="color:white;" href="#">Edit</a>
+            </button>
+        </section>
     </div>
 
     <div class="anderen_flex">
         <!---Account Details--->
         <div class="anderen leerlingen">
-            <h2>Leerlingen</h2>
+            <h2 class="rectTitle">Leerlingen</h2>
             <div class="meer"><a style="color:white;" href="#">Meer Leerlingen</a></div>
         </div>
 
         <!---Account Details--->
         <div class="anderen medewerkers">
-            <h2>Medewerkers</h2>
+            <h2 class="rectTitle">Medewerkers</h2>
             <div class="meer"><a style="color:white;" href="#">Meer medewerkers</a></div>
         </div>
     </div>

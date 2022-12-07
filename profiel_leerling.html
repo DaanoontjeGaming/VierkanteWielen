@@ -6,29 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn profiel</title>
-    <link rel="stylesheet" type="text/css" href="style_profiel.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="style_profiel.css" /> -->
 </head>
 
 <body>
-    <div class="Navi">
-        <a href="index.php">Home</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Mijn Profiel</a>
-    </div>
+    <!-- <?php include('navbar.php')?> -->
 
     <div class="welcome">Welkom bij je account, </div>
 
     <!---Account Details--->
-    <div class="roundRectDark">
-        <h2>Jouw account</h2>
-        <div class="edit"><a style="color:white;" href="#">Edit</a></div>
+    <div class="roundRect" style="background-color:#E6E6E6">
+        <h2 class="rectTitle">Jouw account</h2>
+
+        <section class="section">
+            <div>
+                <p>username</p>
+            </div>
+        </section>
+        <section class="section">
+            <div>
+                <p>email</p>
+            </div>
+            <div>
+                <p>telefoon</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <button type="button" class="buttonBlue">
+                <a style="color:white;" href="#">Edit</a>
+            </button>
+        </section>
     </div>
 
 
-    <!---Account Details--->
-    <div class="roundRectLight">
-        <h2>Jouw pakket</h2>
+    <!---Gekozen pakket--->
+    <div class="roundRect" style="background-color:lightgray">
+        <h2 class="rectTitle">Jouw pakket</h2>
+
     </div>
 
 </body>
