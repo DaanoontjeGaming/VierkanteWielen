@@ -66,6 +66,68 @@ ACCOUNT DETAILS + ZIEK MELDEN
     text-align: center;
 }
 
+/*
+DASHBOARD
+*/
+
+.dashboardTable {
+
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+th, td {
+    /*
+    border: 1px solid black;
+    */
+    width: 10%;
+    padding: 5px;
+}
+td {
+    border: 1px solid lightgray;
+}
+td:hover {
+    background-color: lightgray;
+}
+.weekDag {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+.weekNummer {
+    border-bottom: 1px solid lightgray;
+}
+
+.weekButtons {
+    position: absolute;
+    right: 5px;
+    left: auto;
+}
+
+.triangleButton {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: white;
+}
+.triangleButton:hover {
+    background-color: #E6E6E6;
+}
+.triangle {
+    border-style: solid;
+    height: 0;
+    width: 0;
+}
+.triangle--r {
+    border-color: transparent transparent transparent lightgray;
+    border-width: 10px 0 10px 10px;
+}
+.triangle--l {
+    border-color: transparent lightgray transparent transparent;
+    border-width: 10px 10px 10px 0;
+}
 
 /*
 END NEW
