@@ -611,10 +611,83 @@ h1 {
 }
 
 /* Accounts.php table styling */
-.accountsTable a{
+.styled-table a{
     text-decoration: none;
     color: blue;
 }
-.accountsTable a:visited{
+.styled-table a:visited{
     color: blue;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: auto;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table button{
+    background-color: #009879;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: white;
+}
+.addFormDiv{
+    margin: auto;
+    text-align: center;
+
+}
+.addFormDiv form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .addFormDiv label,
+  input {
+    display: inline-block;
+  }
+  
+  .addFormDiv label {
+    width: 30%;
+    text-align: right;
+  }
+  
+  .addFormDiv label+input {
+    width: 30%;
+    margin: 0 30% 0 4%;
+  }
+  
+  .addFormDiv input+input {
+    float: right;
+}
+.addFormDiv select{
+    text-align: left;
+    width: 30%;
+    margin: 0 0% 0 5%;
 }

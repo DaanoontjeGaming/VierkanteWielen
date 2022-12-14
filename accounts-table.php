@@ -5,26 +5,31 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div>
-		<form method="POST" action="accounts-add.php">
+	<div class="addFormDiv">
+		<form method="POST" action="accounts-add.php" >
 			<label>Username:</label><input type="text" name="Username">
 			<label>Password:</label><input type="text" name="Password">
 			<br>
-			<label>Email</label><input type="text" name="Email">
-			<label>Function</label><input type="text" name="Function">
+			<label>Email:</label><input type="text" name="Email">
+			<label>Function:</label><select name="Function">
+			<option value="Leerling">Leerling</option>
+			<option value="Instructeur">Instructeur</option>
+			<option value="Beheerder">Beheerder</option>
+			</select>
 			<input type="submit" name="add">
 		</form>
 	</div>
 	<br>
 	<div>
-		<table border="1" class='accountsTable'>
+		<table border="1" class='styled-table'>
 			<thead>
 				<th>AccountID</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>Email</th>
 				<th>Function</th>
-				<th>resetpw_token</th>
+				<th>rpwt</th>
+				<th>Actions</th>
 			</thead>
 			<tbody>
 				<?php
@@ -39,8 +44,12 @@
 						<td><?php echo $row["Function"]; ?></td>
 						<td><?php echo $row["resetpw_token"]; ?></td>
 							<td>
-								<a href="accounts-edit.php?id=<?php echo $row['AccountID']; ?>">Edit</a>
-								<a href="accounts-del.php?id=<?php echo $row['AccountID']; ?>">Delete</a>
+								
+
+								<button onclick="location.href='accounts-edit.php?id=<?php echo $row['AccountID']; ?>'" type="button">Edit</button>
+								<button onclick="location.href='accounts-del.php?id=<?php echo $row['AccountID']; ?>'" type="button">Delete</button>
+								<!-- <a href="accounts-edit.php?id=<?php echo $row['AccountID']; ?>">Edit</a> -->
+								<!-- <a href="accounts-del.php?id=<?php echo $row['AccountID']; ?>">Delete</a> -->
 							</td>
 						</tr>
 						<?php
@@ -49,5 +58,6 @@
 			</tbody>
 		</table>
 	</div>
+	<?php include('footer.php')?>
 </body>
 </html>

@@ -15,7 +15,11 @@
   <label>Username:</label><input type="text" value="<?php echo $row['Username']; ?>" name="Username">
   <label>Password</label><input type="text" value="<?php echo $row['Password']; ?>" name="Password">
   <label>Email:</label><input type="text" value="<?php echo $row['Email']; ?>" name="Email">
-  <label>Function:</label><input type="text" value="<?php echo $row['Function']; ?>" name="Function">
+  <label>Function:</label><select name="Function">
+  <option value="Leerling">Leerling</option>
+  <option value="Instructeur">Instructeur</option>
+  <option value="Beheerder">Beheerder</option>
+  </select>
 		<input type="submit" name="submit">
 		<a href="accounts-table.php">Back</a>
 	</form>
