@@ -609,3 +609,12 @@ h1 {
 #registreren:hover{
     color: #2ca4ff;
 }
+
+/* Accounts.php table styling */
+.accountsTable a{
+    text-decoration: none;
+    color: blue;
+}
+.accountsTable a:visited{
+    color: blue;
+}

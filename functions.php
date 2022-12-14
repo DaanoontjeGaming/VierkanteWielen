@@ -62,9 +62,9 @@ echo '
 //Functie die kijkt of de host machine die van webhost of daan zijn pc is en hierdoor de 
 function connDetails(){
     if (in_array(gethostname(), array('freeweb22.byetcluster.com', 'Daan machine name hier'))){
-        return array('vierkantewielen_db_1', 'root')
+        return array('vierkantewielen_db_1', 'root');
     } else{
-        return array('localhost', '')
+        return array('localhost', '');
     }
 }
 
