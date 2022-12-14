@@ -1,7 +1,10 @@
+<?php
+session_start();
+$username = $_SESSION['Username'];
+?>
+<head>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,15 +27,12 @@
     $user = 'root';
     $pass = 'root';
     $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
-    $AccountData = $db->query("SELECT * FROM Accounts WHERE Username = '$gebruikersnaam'");
-    $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'");
-    $result = $ID->fetch();
-    $string = $result[0];
-    $accountID = intval($string);
-    $InstructeurData = $db->query("SELECT * FROM Instructeurs WHERE AccountID = '$accountID'");
-    $username = $AccountData['Username'];
-    $email = $InstructeurData['Email'];
-    $telefoon = $InstructeurData['Telefoon'];
+    $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'")->fetch();
+    $accountID = intval($ID[0]);
+    $Mail = $db->query("SELECT Email FROM Instructeurs WHERE AccountID = '$accountID'")->fetch();
+    $email = $Mail[0];
+    $Nummer = $db->query("SELECT Telefoon FROM Instructeurs WHERE AccountID = '$accountID'")->fetch();
+    $telefoon = $Nummer[0];
     echo'
     <section class="section">
         <div>
@@ -70,18 +70,18 @@
             <p>Reden:</p>
         </div>
         <div>
-            <form>
+            <form> <!-- Hier moet nog een action & method komen om de values op te slaan en te verzenden naar de agenda. -->
                 <input type="radio" id="ziek" name="reden" value="ziek">
                 <label for="ziek">Ziek</label><br>
                 <input type="radio" id="anders" name="reden" value="anders">
                 <label for="anders">Anders:</label>
                 <input type="text" id="andersReden" name="reden">
+                </section>
+                <section class="section">
+                <input type="submit" class="buttonBlue" style="color:white;" value='Verzenden'>
+                </section>
             </form>
         </div>
-    </section>
-    <section class="section">
-        <button type="button" class="buttonBlue"><a style="color:white;" href="#">Verzenden</a></button>
-    </section>
 </div>
 
 </body>
