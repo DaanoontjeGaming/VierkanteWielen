@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,23 +12,23 @@
 </head>
 <body>
     <div class="options">
-        <form class="changer-form" action="Settingspages/changeuser.php" method="POST">
+        <form class="changer-form" action="changeuser.php" method="POST">
             <label class="label">Gebruikersnaam aanpassen</label>
             <input class="change-box" type="text" name="username" placeholder="username">
             <input class="change-box"type="submit" name="submit" value="Aanpassen">
         </form>
-        <form class="changer-form" action="Settingspages/changepass.php" method="POST">
+        <form class="changer-form" action="changepass.php" method="POST">
             <label class="label">Wachtwoord aanpassen</label>
             <input class="change-box" type="password" name="password" placeholder="password">
             <input class="change-box"type="submit" name="submit" value="Aanpassen">
         </form>
-        <form class="changer-form" action="Settingspages/changemail.php" method="POST">
+        <form class="changer-form" action="changemail.php" method="POST">
             <label class="label">Mailadres aanpassen</label>
             <input class="change-box" type="email" name="email" placeholder="example@example.com">
             <input class="change-box"type="submit" name="submit" value="Aanpassen">
         </form>
-        <form class="changer-form" action="Settingspages/changephone.php" method="POST">
-            <label class="label">Mailadres aanpassen</label>
+        <form class="changer-form" action="changephone.php" method="POST">
+            <label class="label">Telefoon aanpassen</label>
             <input class="change-box" type="text" name="phone" placeholder="0612345678">
             <input class="change-box"type="submit" name="submit" value="Aanpassen">
         </form>
