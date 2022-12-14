@@ -15,7 +15,7 @@ $result = $db->query("SELECT * from vierkantewielendb.Accounts WHERE resetpw_tok
 //   }; else {
 //   echo 'Passwords did not match'
 // }
-if ($password1 == $password2){
+if ($password1 == $password2 AND $rcode != 0){
   if($result->rowCount()>0){
     $db->query("UPDATE vierkantewielendb.Accounts SET Password='$password1' WHERE resetpw_token='$rcode'");
     $db->query("UPDATE vierkantewielendb.Accounts SET resetpw_token='0' WHERE resetpw_token='$rcode'");
