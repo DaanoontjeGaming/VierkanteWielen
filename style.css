@@ -97,11 +97,12 @@ td:hover {
 .weekNummer {
     border-bottom: 1px solid lightgray;
 }
-
+#week {
+    font-size: 1.2vw;
+}
 .weekButtons {
-    position: absolute;
-    right: 5px;
-    left: auto;
+    margin-left: 80%;
+    padding-bottom: 15px;
 }
 
 .triangleButton {
