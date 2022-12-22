@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn profiel</title>
-    <link rel="stylesheet" type="text/css" href="style_profiel.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-    <!-- <?php include('navbar.php')?> -->
+    <?php include('navbar.php')?>
 
     <div class="welcome">
         <h1>Welkom bij je account, </h1>
@@ -41,7 +40,7 @@
     </div>
 
     <div class="anderen_flex">
-        <!---Account Details--->
+        <!---Lijst met leerlingen--->
         <div class="anderen leerlingen">
             <h2 class="rectTitle">Leerlingen</h2>
 
@@ -49,13 +48,12 @@
                 <p>(Naam leerling)</p>
             </div>
 
-
             <button type="button" class="buttonBlue">
                 <a style="color:white;" href="#">Meer Leerlingen</a>
             </button>
         </div>
 
-        <!---Account Details--->
+        <!---Lijst met medewerkers--->
         <div class="anderen medewerkers">
             <h2 class="rectTitle">Medewerkers</h2>
 
@@ -68,7 +66,7 @@
             </button>
         </div>
     </div>
-
+    <?php include('footer.php') ?>
 </body>
 
 </html>
