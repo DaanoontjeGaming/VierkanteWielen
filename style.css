@@ -177,6 +177,28 @@ td:hover {
     float: right;
 }
 
+/* Alle leerlingen en alle medewerkers pagina */
+.rowLeerling {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.rowMedewerker {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.toevoegButtonDiv {
+    justify-content: center;
+}
+
+.toevoegButton:hover {
+    transform: scale(1.1);
+}
+
+
 /*  SCROLLBAR   */
 /* width */
 ::-webkit-scrollbar {
