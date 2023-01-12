@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +14,26 @@
 
 <body>
     <?php include('navbar.php') ?>
-
+    <?php $gebruikersnaam = 'TeddyBeertje123';
+$ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'")->fetch();
+   $accountID = intval($ID[0]);
+$Mail = $db->query("SELECT Email FROM Leerlingen WHERE AccountID = '$accountID'")->fetch();
+    $email = $Mail[0];
+$Nummer = $db->query("SELECT Telefoon FROM Leerlingen WHERE AccountID = '$accountID'")->fetch();
+    $telefoon = $Nummer[0];
+$PID = $db->query("SELECT PakketID FROM Leerlingen WHERE AccountID = '$accountID'")->fetch();
+    $PakketID = $PID[0];
+$Pakket = $db->query("SELECT Pakketnaam FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();
+    $Pakketnaam = $Pakket[0];
+$Bedrag = $db->query("SELECT Prijs FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();
+    $Prijs = intval($Bedrag[0]);
+$Uren = $db->query("SELECT Lesuren FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();
+    $Lesuren = intval($Uren[0]);
+$Auto = $db->query("SELECT Autosoort FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();
+    $Autosoort = $Auto[0];
+?>
     <div class="welcome">
-        <h1>Welkom bij je account, </h1>
+        <?php echo '<h1>Welkom bij je account, '.$gebruikersnaam.'</h1>';?>
     </div>
 
     <!---Account Details--->
@@ -22,54 +42,45 @@
 
         <section class="section">
             <div>
-                <p>(username)</p>
+                <?php echo '<p>'.$gebruikersnaam.'</p>'?>
             </div>
             <div>
-                <p>(klantnummer)</p>
+                <?php echo '<p>'.$accountID.'</p>'?>
             </div>
         </section>
         <section class="section">
             <div>
-                <p>(email)</p>
+                <?php echo '<p>'.$email.'</p>'?>
             </div>
             <div>
-                <p>(telefoon)</p>
+                <?php echo '<p>'.$telefoon.'</p>'?>
             </div>
         </section>
 
         <section class="section">
             <button type="button" class="buttonBlue">
-                <a style="color:white;" href="#">Edit</a>
+                <a style="color:white;" href="editaccinfo.php">Edit</a>
             </button>
         </section>
     </div>
-
 
     <!---Gekozen pakket--->
     <div class="roundRect" style="background-color:lightgray">
         <h2 class="rectTitle">Jouw pakket</h2>
         <section class="section">
             <div>
-                <p>(naam pakket)</p>
+                <?php echo '<p>'.$Pakketnaam.'</p>'?>
             </div>
             <div>
-                <p>(naam instructeur)</p>
-            </div>
-        </section>
-        <section class="section">
-            <div>
-                <p>(totaal bedrag)</p>
-            </div>
-            <div>
-                <p>(hoeveel betaald)</p>
+                <?php echo '<p>'.$Autosoort.'</p>'?>
             </div>
         </section>
         <section class="section">
             <div>
-                <p>(totaal lessen)</p>
+                <?php echo '<p>€'.$Prijs.',99</p>'?>
             </div>
             <div>
-                <p>(hoeveel lessen tegoed)</p>
+                <?php echo '<p>'.$Lesuren.'</p>'?>
             </div>
         </section>
     </div>
