@@ -1,3 +1,8 @@
+<?php
+session_start();
+$gebruikersnaam = $_SESSION['Username'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +19,7 @@
 
 <!---WELCOME TEXT--->
 <div class="welcome">
-    <h1>Welkom bij je account,</h1>
+    <?php echo '<h1>Welkom bij je account, '.$gebruikersnaam.'</h1>'; ?>
 </div>
 
 <!---ACCOUNT DETAILS --->
@@ -24,19 +29,16 @@
     $user = 'root';
     $pass = 'root';
     $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
-    $AccountData = $db->query("SELECT * FROM Accounts WHERE Username = '$gebruikersnaam'");
-    $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'");
-    $result = $ID->fetch();
-    $string = $result[0];
-    $accountID = intval($string);
-    $InstructeurData = $db->query("SELECT * FROM Instructeurs WHERE AccountID = '$accountID'");
-    $username = $AccountData['Username'];
-    $email = $InstructeurData['Email'];
-    $telefoon = $InstructeurData['Telefoon'];
+    $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'")->fetch();
+    $accountID = intval($ID[0]);
+    $Mail = $db->query("SELECT Email FROM Instructeurs WHERE AccountID = '$accountID'")->fetch();
+    $email = $Mail[0];
+    $Nummer = $db->query("SELECT Telefoon FROM Instructeurs WHERE AccountID = '$accountID'")->fetch();
+    $telefoon = $Nummer[0];
     echo'
     <section class="section">
         <div>
-            <p>'.$username.'</p>
+            <p>'.$gebruikersnaam.'</p>
         </div>
     </section>
     <section class="section">

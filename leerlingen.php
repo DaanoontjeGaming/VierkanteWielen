@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,108 +26,41 @@
                 <th>Klantnummer</th>
                 <th>Pakket</th>
                 <th>Lessen</th>
-                <th>Betaald</th>
             </tr>
             <!-- Dit is alleen een voorbeeld. 
                 De volgende tabelrijen moeten uit de database komen. -->
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(aantal lessen)</td>
-                <td>(bedrag betaald)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(26/40)</td>
-                <td>(€400/€1000)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(16/25)</td>
-                <td>(€250/€800)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(11/40)</td>
-                <td>(€1400/€1400)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(26/40)</td>
-                <td>(€400/€1000)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(16/25)</td>
-                <td>(€250/€800)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(11/40)</td>
-                <td>(€1400/€1400)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(26/40)</td>
-                <td>(€400/€1000)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(16/25)</td>
-                <td>(€250/€800)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(11/40)</td>
-                <td>(€1400/€1400)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(26/40)</td>
-                <td>(€400/€1000)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(16/25)</td>
-                <td>(€250/€800)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(11/40)</td>
-                <td>(€1400/€1400)</td>
-            </tr>
-            <tr class="rowLeerling">
-                <td>(volledige naam)</td>
-                <td>(klantnummer)</td>
-                <td>(pakket naam)</td>
-                <td>(11/40)</td>
-                <td>(€1400/€1400)</td>
-            </tr>
+            <?php 
+            $user = 'root';
+            $pass = 'root';
+            $db = new PDO('mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB', $user,$pass);
+            $leerlingen = $db->query("SELECT * FROM Leerlingen");
+            foreach ($leerlingen as $leerling) {
+$leerlingID = intval($leerling['LeerlingID']);
+$PID = $db->query("SELECT PakketID FROM Leerlingen WHERE LeerlingID = '$leerlingID'")->fetch();
+$PakketID = $PID[0];
+$Pname = $db->query("SELECT Pakketnaam FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();        
+$Pakketnaam = $Pname[0];
+$Lesaantal = $db->query("SELECT Lesuren FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();  
+$Lessen = intval($Lesaantal[0]);
+                echo '
+                <tr>
+                <th>'.$leerling['Voornaam'].' '.$leerling['Tussenvoegsel'].' '.$leerling['Achternaam'].'</th>
+                <th>'.$leerlingID.'</th>';
+                if(isset($PakketID)){
+                    $Pname = $db->query("SELECT Pakketnaam FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();        
+                    $Pakketnaam = $Pname[0];
+                    $Lesaantal = $db->query("SELECT Lesuren FROM Lespaketten WHERE PakketID = '$PakketID'")->fetch();  
+                    $Lessen = intval($Lesaantal[0]);
+                    echo '<th>'.$Pakketnaam.'</th>';
+                } else {
+                    echo '<th>Geen lespakket gekocht</th>';
+                }
+                echo '
+                <th>'.$Lessen.'</th>
+                </tr>';
+        }
+            
+            ?>
         </table>
     </div>
 

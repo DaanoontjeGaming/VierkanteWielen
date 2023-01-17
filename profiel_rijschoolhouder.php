@@ -56,13 +56,12 @@ echo'
     <button type="button" class="buttonBlue"> 
                 <a style="color:white;" href="leerlingen.php">Meer Leerlingen</a> 
             </button> 
-</div>
-        <!---Account Details--->
-        <div class="anderen medewerkers">
+            <br> <br> 
             <h2 class="rectTitle">Medewerkers</h2> <br>
+</div>
 <div>
             <button type="button" class="buttonBlue"> 
-                <a style="color:white;" href="medewerkers.php">Meer Medewerkers</a> 
+                <a style="color:white;" href="voegtoeinstructeur.php">Meer Medewerkers</a> 
             </button> 
 </div>
 </body>

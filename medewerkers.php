@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +14,7 @@
 </head>
 
 <body>
-    <!-- <?php include('navbar.php') ?> -->
+    <?php include('navbar.php') ?>
 
     <div class="welcome">
         <h1>Bekijk medewerkers</h1>
@@ -21,122 +25,31 @@
             <tr>
                 <th>Naam</th>
                 <th>Medewerkernummer</th>
-                <th>Uren</th>
-                <th>Leelingen</th>
-                <th>Salaris maandelijks</th>
+                <th>Email</th>
+                <th>Telefoon</th>
             </tr>
-            <!-- Dit is alleen een voorbeeld. 
-                De volgende tabelrijen moeten uit de database komen. -->
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(uren i/d week)</td>
-                <td>(aantal leerlingen)</td>
-                <td>(salaris)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
-            </tr>
-            <tr class="rowMedewerker">
-                <td>(volledige naam)</td>
-                <td>(Medewerkernummer)</td>
-                <td>(32)</td>
-                <td>(15)</td>
-                <td>(€2000,60)</td>
+            <?php
+            $user = 'root';
+            $pass = 'root';
+            $db = new PDO('mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
+            $medewerkers = $db->query("SELECT * FROM Instructeurs");
+            foreach ($medewerkers as $medewerker) {
+      echo '<tr class="rowMedewerker">
+                <th>'.$medewerker['Voornaam'].' '.$medewerker['Tussenvoegsel'].' '.$medewerker['Achternaam'].'</th>
+                <th>'.$medewerker['InstructeursID'].'</th>
+                <th>'.$medewerker['Email'].'</th>
+                <th>'.$medewerker['Telefoon'].'</th>
             </tr>
         </table>
-
-
-
-    </div>
+    </div>';}
+    ?>
     <div class="roundRect toevoegButtonDiv" style="background-color:#E6E6E6">
-        <a href="accounts-table.php">
+        <a href="addinstructeur.php">
             <button class="buttonBlue toevoegButton" style="color: white;">Voeg medewerker toe</button>
         </a>
     </div>
 
-    <!-- <?php include('footer.php') ?> -->
+    <?php include('footer.php') ?>
 </body>
 
 </html>
