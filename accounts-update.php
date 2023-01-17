@@ -8,5 +8,5 @@
  
 	$db = new PDO("mysql:host=localhost;dbname=VierkanteWielenDB", 'root', '');
   $db->query("update `Accounts` set Username='$username', Password='$password', Email='$email', Function='$function' where AccountID='$id'");
-	header('location:accounts-table.php');
+	header('location:admin-panel.php');
 ?>

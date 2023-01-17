@@ -21,7 +21,7 @@
   <option value="Beheerder">Beheerder</option>
   </select>
 		<input type="submit" name="submit">
-		<a href="accounts-table.php">Back</a>
+		<a href="admin-panel.php">Back</a>
 	</form>
 </body>
 </html>

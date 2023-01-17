@@ -21,6 +21,8 @@
     echo '<a href="Profiel_Instructeur.php">Profiel</a>';
   } else {
     echo '<a href="">Profiel</a>'; //Leerling profiel pagina is nog niet 100% af
-}}
+}
+  echo '<a href="inloggen.php?loguit">uitloggen</a>';
+}
   ?>
 </div>

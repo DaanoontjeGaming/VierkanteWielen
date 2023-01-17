@@ -1,7 +1,21 @@
+<?php
+session_start();
+include('navbar.php');
+$username = $_SESSION['Username'];
+$db = new PDO("mysql:host=localhost;dbname=VierkanteWielenDB", 'root', '');
+$query = $db->query("SELECT Function FROM Accounts where Username='$username'");
+$result = $query->fetch(PDO::FETCH_ASSOC);
+// if ($result['Function'] == 'Beheerder'){
+// 	echo 'it works';
+// } else{
+// 	header('location: index.php');
+// 	echo 'Je hebt geen rechten om hier te zijn boef!';
+// }
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Basic MySQLi Commands</title>
+<title>Admin panel CRUD</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -33,7 +47,6 @@
 			</thead>
 			<tbody>
 				<?php
-					$db = new PDO("mysql:host=localhost;dbname=VierkanteWielenDB", 'root', '');
 					$query = $db->query("SELECT * FROM Accounts");
 					while ($row = $query->fetch(PDO::FETCH_ASSOC)){?>
 						<tr>

@@ -58,17 +58,6 @@ echo '
             // Alleen als er is ingelogd komt er een buy button.
         }
    echo '</div>';}}}
-
-//Functie die kijkt of de host machine die van webhost of daan zijn pc is en hierdoor de 
-function connDetails(){
-    if (in_array(gethostname(), array('freeweb22.byetcluster.com', 'Daan machine name hier'))){
-        return array('vierkantewielen_db_1', 'root');
-    } else{
-        return array('localhost', '');
-    }
-}
-
-
 ?>
 <!-- 
 Hier komen stukjes code die je vaker gaat gebruiken en je kan aanroepen.

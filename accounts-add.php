@@ -6,5 +6,5 @@
  
   $db = new PDO("mysql:host=localhost;dbname=VierkanteWielenDB", 'root', '');
   $db->query("INSERT INTO vierkantewielendb.Accounts (`Username`, `Password`, `Email`, `Function`) VALUES ('$username', '$password', '$email', '$function')");
-  header('location:accounts-table.php');
+  header('location:admin-panel.php');
 ?>
