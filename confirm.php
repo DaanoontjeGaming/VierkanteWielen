@@ -5,9 +5,9 @@ require_once('functions.php');
 $username = $_POST['Username'];
 $password = $_POST['Password'];
 
-    $user = 'epiz_32960176';
-    $pass = 'kIxaluzZHWw';
-    $db = new PDO("mysql:host=sql113.epizy.com;dbname=epiz_32960176_VierkantieWielenDB", $user, $pass);
+    $user = 'root';
+    $pass = 'root';
+    $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkantieWielenDB", $user, $pass);
 $stmt = $db->prepare("SELECT * FROM Accounts WHERE Username = '$username'");
 $stmt->execute(['username' => $username]); 
 $result = $stmt->fetchAll(); 
