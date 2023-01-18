@@ -1,9 +1,9 @@
-<!--<?php
+<?php
 session_start();
 require_once('functions.php');
 
 $_SESSION['false-user-pass'] = "";
-?-->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@ $_SESSION['false-user-pass'] = "";
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-    <!--<?php include('navbar.php')?>-->
+    <?php include('navbar.php')?>
 <body>
     <div class="imgcon">
         <img class="imgclass" src="Images/download.png">
@@ -56,14 +56,14 @@ $_SESSION['false-user-pass'] = "";
         </div>
     </div>
 <div class="grid-container">
-     <!--<?php
+     <?php
     $user = 'root';
     $pass = 'root';
     $db = new PDO("mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB", $user, $pass);
     echo getLespaketten($db, $_SESSION['Ingelogd']);
-    ?>-->
+    ?>
 </div>
 <script src="script.js"></script>
-<!--<?php include('footer.php')?>-->
+<?php include('footer.php')?>
 </body>
 </html>

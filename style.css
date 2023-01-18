@@ -8,9 +8,6 @@ blauwgrijs: #BCD8ED / rgb(188, 216, 237) --10%--
 /*
 START NEW
 */
-h1 {
-    font-size: 2vw;
-}
 
 h2 {
     font-size: 1.1vw;
@@ -288,7 +285,7 @@ END NEW
     padding-top: 5%;
     padding-bottom: 5%;
     justify-content: space-around;
-    background-color: #BCD8ED;
+    background-color: lightgray;
     align-items: center;
 }
 
@@ -303,11 +300,7 @@ END NEW
 
 .info-text h1 {
     margin-bottom: 5px;
-}
-
-.imgclass2 {
-    width: 35%;
-    height: 35%;
+    font-size: 2vw;
 }
 
 .Pakketten {
@@ -574,15 +567,6 @@ footer {
     border: solid gray 1vw;
 }
 
-.info {
-    display: flex;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    justify-content: space-around;
-    background-color: lightgray;
-    align-items: center;
-}
-
 .info p {
     font-size: 1vw;
 }
@@ -598,8 +582,13 @@ footer {
     -Slideshow code=
 */
 
+.special {
+}
+
 .reviews {
     background-color: #BCD8ED;
+    display: flex;
+    justify-content: center;
 }
 
 .reviews a {
@@ -607,10 +596,7 @@ footer {
 }
 
 .review-slide {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
+
 }
 
 .review-img img {
@@ -631,6 +617,8 @@ footer {
     color: black;
     font-size: 1.5vw;
     text-align: center;
+    margin-top: 3vw;
+    margin-left: 1.5vw;
 }
 
 .fade {
