@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +10,9 @@
     <title>Homepagina</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <div class="Navi">
-        <a href="index.php">Home</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.php">Log in</a>
-    </div>
+<body id="news">
+   <?php include('navbar.php') ?>
+
+   <h2>Geen nieuws momenteel!</h2>
 </body>
 </html>
