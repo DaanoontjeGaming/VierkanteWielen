@@ -14,7 +14,7 @@ session_start();
 
 <body>
     <?php include('navbar.php') ?>
-    <?php $gebruikersnaam = 'TeddyBeertje123';
+    <?php $gebruikersnaam = $_SESSION['Username'];
 $ID = $db->query("SELECT AccountID FROM Accounts WHERE Username = '$gebruikersnaam'")->fetch();
    $accountID = intval($ID[0]);
 $Mail = $db->query("SELECT Email FROM Leerlingen WHERE AccountID = '$accountID'")->fetch();
