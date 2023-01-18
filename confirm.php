@@ -5,13 +5,13 @@ require_once('functions.php');
 $username = $_POST['Username'];
 $password = $_POST['Password'];
 
-$user = 'root';
-$pass = 'root';
-$db = new PDO('mysql:host=vierkantewielen_db_1;dbname=VierkanteWielenDB', $user, $pass);
-foreach($db->query('SELECT * FROM Accounts') as $accData){
-    $username2 = $accData['Username'];
-    $password2 = $accData['Password'];
-if($username === $username2 && $password === $password2){
+    $user = 'epiz_32960176';
+    $pass = 'kIxaluzZHWw';
+    $db = new PDO("mysql:host=sql113.epizy.com;dbname=epiz_32960176_VierkantieWielenDB", $user, $pass);
+$stmt = $db->prepare("SELECT * FROM Accounts WHERE Username = '$username'");
+$stmt->execute(['username' => $username]); 
+$result = $stmt->fetchAll(); 
+if(count($result) === 1){
     $_SESSION['Username'] = $username;
     $_SESSION['Ingelogd'] = true;
     $_SESSION['false-user-pass'] = "";
@@ -20,5 +20,5 @@ if($username === $username2 && $password === $password2){
     $_SESSION['Ingelogd'] = false;
     $_SESSION['false-user-pass'] = "<p class='red melding'>Onjuiste gebruikersnaam of wachtwoord!<p>";
     header("location: inloggen.php");
-}};
+};
 ?>
